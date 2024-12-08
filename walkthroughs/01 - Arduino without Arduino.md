@@ -38,6 +38,7 @@ Next we actually install the tools. You see a few of the tools we listed above h
 
 Check the installation path for more info. For my machine it is 
 /opt/homebrew/Cellar/avr-binutils/2.43.1/avr/bin/objcopy
+
 /opt/homebrew/Cellar/avr-gcc@9/9.4.0_1/avr/include/avr
 
 ## Hello World
@@ -47,21 +48,22 @@ Based off tutorial found [here](https://github.com/rubberduck203/embedded-101)
 Starting off with the basic hello world of microcontrollers, blinking the on board LED.
 
 ### Code
-`// hello-world.c
-#include <avr/io.h>
-#include <util/delay.h>
+```
+// hello-world.c  
+#include <avr/io.h>  
+#include <util/delay.h>  
 
-int main(void)
+int main(void)  
 {
-    DDRB |= (1 << DDB5);
+	DDRB |= (1 << DDB5);
 
-    for(;;)
-    {
-        PORTB |= (1 << PORTB5);
-        _delay_ms(500);
-        PORTB &= ~(1 << PORTB5);
-        _delay_ms(500);
-    }
-}`
-
+	for(;;)
+	{
+		PORTB |= (1 << PORTB5);
+		_delay_ms(500);
+		PORTB &= ~(1 << PORTB5);
+		_delay_ms(500);
+	}
+}
+```
 This task is simple enough where we only need a single source file
