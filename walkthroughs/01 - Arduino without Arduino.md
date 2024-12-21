@@ -163,3 +163,16 @@ Putting it all together, we get a similar result to turning the LED on, only wit
 ```
 PORTB &= ~(1 << DDB5)
 ```
+
+---
+
+## Building and Running
+Now that we have our code, it is time to compile it to a form that our microcontroller can understand. For this we will be using a few tools from our toolchain that we installed at the beginning.
+
+First, check to make sure your AVR cross-compiler, avr-gcc, is installed.
+
+```
+avr-gcc --version
+```
+
+It is called a cross-compiler because it runs on one machine (the host), but generates code for a target machine, in this case our ATMega329p. But of course avr-gcc supports many other AVR MCUs.
