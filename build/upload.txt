@@ -1,0 +1,1 @@
+avrdude -v -patmega328p -carduino -b115200 -P /dev/tty.usbserial-1110 -D -Uflash:w:<hex file>:i

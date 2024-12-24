@@ -9,6 +9,6 @@ int main(void)
 		PORTB |= (1 << PORTB5);
 		_delay_ms(3000);
 		PORTB &= ~(1 << PORTB5);
-		_delay_ms(3000);
+		_delay_ms(500);
 	}
 }

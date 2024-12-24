@@ -55,6 +55,16 @@ avrdude -v -patmega328p -carduino -b115200 -D -Uflash:w:hello-world.hex:i
 
 Here we tell avrdude to upload to an ATMega328p process (-patmega328p) using the arduino bootloader (-carduino) with a baud rate of 11520 bits per second (-b11520). We will want to delete whatever is there currently before uploading (-D). The last section uploads our hex file.
 
+You may also have to specify the port that your Arduino is connected to. For my Macbook Pro I opened a terminal, connected my Arduino, and ran the command:
+
+```
+ls -lha /dev/tty*
+```
+
+Among the list outputted I saw "/dev/tty.usbserial-1110" which disappeared when I disconnected the Arduino and reran the command.
+
+You should then add the port to the avrdude command above by doing "-P" followed by a space, followed by the port.
+
 The onboard LED on the Arduino Nano should now be blinking. Play around with the values you give to _delay_ms(), and rerun the compile and upload commands and see how it changes how the LED blinks.
 
 ## Build Systems
